@@ -1,0 +1,54 @@
+name: "Marp CLI Action"
+author: "KoharaKazuya"
+description: "Run @marp-team/marp-cli to convert markdown files into static HTML / CSS, PDF, PowerPoint document, and image(s)"
+
+inputs:
+  config-file:
+    description: >
+      Marp CLI configuraiton file path.
+      If not specified, the configuration file in the repository root directory will be automatically detected.
+
+      See [Marp CLI document](https://github.com/marp-team/marp-cli/blob/master/README.md#configuration-file).
+    required: false
+
+  generate-html:
+    description: >
+      Whether to generate HTML.
+    required: false
+    default: "true"
+
+  generate-pdf:
+    description: >
+      Whether to generate PDF.
+    required: false
+    default: "true"
+
+  generate-pptx:
+    description: >
+      Whether to generate PowerPoint.
+    required: false
+    default: "false"
+
+  generate-image:
+    description: >
+      Format of the title slide image.
+      Use the input `png` or `jpeg` to generate an image of the title slide. Omit if you don't want to generate.
+
+      See [Marp CLI document](https://github.com/marp-team/marp-cli/blob/master/README.md#title-slide---image).
+    required: false
+
+  generate-images:
+    description: >
+      Format of the slide deck.
+      Use the input `png` or `jpeg` to generate images of the slide deck. Omit if you don't want to generate.
+
+      See [Marp CLI document](https://github.com/marp-team/marp-cli/blob/master/README.md#multiple-images---images).
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  color: "blue"
+  icon: "layers"
