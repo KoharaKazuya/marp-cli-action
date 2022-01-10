@@ -11,7 +11,7 @@ Translations: [English](./README.md) [日本語](./README.ja.md)
 - uses: actions/checkout@v2
 
 - name: Convert Markdown into HTML and PDF
-  uses: KoharaKazuya/marp-cli-action@v1
+  uses: KoharaKazuya/marp-cli-action@v2
 
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3

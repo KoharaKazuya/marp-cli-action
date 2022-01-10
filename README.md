@@ -11,7 +11,7 @@ This example will publish a HTML slide deck and a PDF file on [GitHub Pages](htt
 - uses: actions/checkout@v2
 
 - name: Convert Markdown into HTML and PDF
-  uses: KoharaKazuya/marp-cli-action@v1
+  uses: KoharaKazuya/marp-cli-action@v2
 
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3
