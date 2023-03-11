@@ -8,7 +8,7 @@ This action can invoke Marp CLI and generate HTML, PDF, PowerPoint and images fr
 This example will publish a HTML slide deck and a PDF file on [GitHub Pages](https://docs.github.com/pages).
 
 ```yaml
-- uses: actions/checkout@v2
+- uses: actions/checkout@v3
 
 - name: Convert Markdown into HTML and PDF
   uses: KoharaKazuya/marp-cli-action@v2

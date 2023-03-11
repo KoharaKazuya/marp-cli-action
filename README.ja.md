@@ -8,7 +8,7 @@ Translations: [English](./README.md) [日本語](./README.ja.md)
 この例は HTML スライドと PDF ファイルを [GitHub Pages](https://docs.github.com/pages) に公開します。
 
 ```yaml
-- uses: actions/checkout@v2
+- uses: actions/checkout@v3
 
 - name: Convert Markdown into HTML and PDF
   uses: KoharaKazuya/marp-cli-action@v2
