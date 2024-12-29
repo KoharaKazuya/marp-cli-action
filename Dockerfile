@@ -1,4 +1,4 @@
-FROM marpteam/marp-cli:v2.4.0
+FROM marpteam/marp-cli:v4.0.4
 
 USER root
 WORKDIR /github/workspace
