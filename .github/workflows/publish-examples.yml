@@ -30,9 +30,6 @@ jobs:
         with:
           config-file: ./examples/ja/.marprc.yml
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
       - name: Uploade artifact
         uses: actions/upload-pages-artifact@v3
         with:
