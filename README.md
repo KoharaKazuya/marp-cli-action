@@ -8,16 +8,24 @@ This action can invoke Marp CLI and generate HTML, PDF, PowerPoint and images fr
 This example will publish a HTML slide deck and a PDF file on [GitHub Pages](https://docs.github.com/pages).
 
 ```yaml
-- uses: actions/checkout@v4
+jobs:
+  publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-- name: Convert Markdown into HTML and PDF
-  uses: KoharaKazuya/marp-cli-action@v3
+      - name: Convert Markdown into HTML and PDF
+        uses: KoharaKazuya/marp-cli-action@v4
 
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./
+      - name: Uploade artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
 See [example slide deck](https://koharakazuya.github.io/marp-cli-action/en/about-marp-cli-action.html) genereted by this action.

@@ -8,16 +8,24 @@ Translations: [English](./README.md) [日本語](./README.ja.md)
 この例は HTML スライドと PDF ファイルを [GitHub Pages](https://docs.github.com/pages) に公開します。
 
 ```yaml
-- uses: actions/checkout@v4
+jobs:
+  publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-- name: Convert Markdown into HTML and PDF
-  uses: KoharaKazuya/marp-cli-action@v3
+      - name: Convert Markdown into HTML and PDF
+        uses: KoharaKazuya/marp-cli-action@v4
 
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./
+      - name: Uploade artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
 このアクションによって生成された [スライドの例](https://koharakazuya.github.io/marp-cli-action/ja/about-marp-cli-action.html) を参照してください。
