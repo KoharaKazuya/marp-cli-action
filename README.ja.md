@@ -8,10 +8,10 @@ Translations: [English](./README.md) [日本語](./README.ja.md)
 この例は HTML スライドと PDF ファイルを [GitHub Pages](https://docs.github.com/pages) に公開します。
 
 ```yaml
-- uses: actions/checkout@v3
+- uses: actions/checkout@v4
 
 - name: Convert Markdown into HTML and PDF
-  uses: KoharaKazuya/marp-cli-action@v2
+  uses: KoharaKazuya/marp-cli-action@v3
 
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3
